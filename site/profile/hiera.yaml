@@ -1,0 +1,27 @@
+---
+
+version: 5
+defaults:
+  datadir: data
+
+hierarchy:
+  - name: 'no-override'
+    data_hash: yaml_data
+    path: 'no_overrides.yaml'
+
+  - name: 'Secret Data no-override, per-data-centre, per-node, per-role and common'
+    lookup_key: eyaml_lookup_key
+    path:
+      - "secrets/no_overrides.yaml"
+      - "secrets/data_centre/%{trusted.extensions.pp_datacenter}.yaml"
+      - "secrets/node/%{trusted.certname}.yaml"
+      - "secrets/role/%{trusted.extensions.pp_role}.yaml"
+      - "secrets/common.yaml"
+
+  - name: 'Normal Data'
+    data_hash: yaml_data
+    path:
+      - "data_centre/%{trusted.extensions.pp_datacenter}.yaml"
+      - "node/%{trusted.certname}.yaml"
+      - "role/%{trusted.extensions.pp_role}.yaml"
+      - "common.yamml"

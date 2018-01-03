@@ -1,0 +1,16 @@
+---
+# Variables
+variables:
+  - &enable_firewall true
+  - &domain_name 'puppet.vm'
+  - &domain_controller 'ms-node0'
+
+profile::ad::domain_name: *domain_name
+profile::ad_child_controller::parent_domain_name: *domain_name
+profile::dns::windows::dns_servers:
+  - '192.168.0.62'
+profile::dns::top_domain_name: *domain_name
+profile::dns::domain_controller: *domain_controller
+profile::domain::windows::domain_name: *domain_name
+profile::domain::top_domain_name: *domain_name
+profile::domain::domain_controller: *domain_controller
