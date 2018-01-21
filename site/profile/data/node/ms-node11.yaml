@@ -1,0 +1,4 @@
+---
+
+profile::ad_child_controller::parent_domain_name: 'emea.puppet.vm'
+profile::ad_child_controller::domain_name: 'brett'

@@ -1,0 +1,14 @@
+---
+
+version: 5
+defaults:
+  datadir: data
+
+hierarchy:
+  - name: 'Normal Data'
+    data_hash: yaml_data
+    paths:
+      - "data_centre/%{trusted.extensions.pp_datacenter}.yaml"
+      - "node/%{trusted.certname}.yaml"
+      - "role/%{trusted.extensions.pp_role}.yaml"
+      - "common.yaml"

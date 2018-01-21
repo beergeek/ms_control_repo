@@ -25,15 +25,6 @@ class profile::ad (
     'password' => $safe_mode_passwd,
   }
 
-  $ad_user_defaults = {
-  }
-
-
-  reboot { 'reboot_after_ad_install':
-    message => 'Installation of AD is complete, Puppet is rebooting this node',
-    apply   => 'immediately',
-  }
-
   dsc_windowsfeature { 'ADDSInstall':
     dsc_ensure => present,
     dsc_name   => 'AD-Domain-Services',
@@ -47,15 +38,6 @@ class profile::ad (
     dsc_sysvolpath                    => $sysvol_path,
     dsc_logpath                       => $ad_log_path,
     require                           => Dsc_windowsfeature['ADDSInstall'],
-    notify                            => Reboot['reboot_after_ad_install'],
-  }
-
-  dsc_xwaitforaddomain { $domain_name:
-    dsc_domainname           => $domain_name,
-    dsc_domainusercredential => $domain_credentials,
-    dsc_retrycount           => $ad_creation_retry_attempts,
-    dsc_retryintervalsec     => $ad_creation_retry_interval,
-    require                  => Dsc_xaddomain[$domain_name],
   }
 
   if $ad_users and !empty($ad_users) {

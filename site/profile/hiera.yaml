@@ -11,17 +11,20 @@ hierarchy:
 
   - name: 'Secret Data no-override, per-data-centre, per-node, per-role and common'
     lookup_key: eyaml_lookup_key
-    path:
+    paths:
       - "secrets/no_overrides.yaml"
-      - "secrets/data_centre/%{trusted.extensions.pp_datacenter}.yaml"
       - "secrets/node/%{trusted.certname}.yaml"
       - "secrets/role/%{trusted.extensions.pp_role}.yaml"
+      - "secrets/data_centre/%{trusted.extensions.pp_datacenter}.yaml"
       - "secrets/common.yaml"
+    options:
+      pkcs7_private_key: /etc/puppetlabs/puppet/ssl/private_key.pkcs7.pem
+      pkcs7_public_key: /etc/puppetlabs/puppet/ssl/public_key.pkcs7.pem
 
   - name: 'Normal Data'
     data_hash: yaml_data
-    path:
-      - "data_centre/%{trusted.extensions.pp_datacenter}.yaml"
+    paths:
       - "node/%{trusted.certname}.yaml"
       - "role/%{trusted.extensions.pp_role}.yaml"
-      - "common.yamml"
+      - "data_centre/%{trusted.extensions.pp_datacenter}.yaml"
+      - "common.yaml"
