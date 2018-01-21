@@ -24,4 +24,4 @@ hierarchy:
       - "data_centre/%{trusted.extensions.pp_datacenter}.yaml"
       - "node/%{trusted.certname}.yaml"
       - "role/%{trusted.extensions.pp_role}.yaml"
-      - "common.yamml"
+      - "common.yaml"
