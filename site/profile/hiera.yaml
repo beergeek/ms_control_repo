@@ -11,7 +11,7 @@ hierarchy:
 
   - name: 'Secret Data no-override, per-data-centre, per-node, per-role and common'
     lookup_key: eyaml_lookup_key
-    path:
+    paths:
       - "secrets/no_overrides.yaml"
       - "secrets/data_centre/%{trusted.extensions.pp_datacenter}.yaml"
       - "secrets/node/%{trusted.certname}.yaml"
@@ -20,7 +20,7 @@ hierarchy:
 
   - name: 'Normal Data'
     data_hash: yaml_data
-    path:
+    paths:
       - "data_centre/%{trusted.extensions.pp_datacenter}.yaml"
       - "node/%{trusted.certname}.yaml"
       - "role/%{trusted.extensions.pp_role}.yaml"
