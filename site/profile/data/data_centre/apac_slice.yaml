@@ -27,4 +27,4 @@ profile::database_services::sqlserver::sqlserver_iso_location: 'C:\\ISOs\\en_sql
 profile::database_services::sqlserver::sqlserver_iso_source: 'puppet:///ISOs/en_sql_server_2016_standard_with_service_pack_1_x64_dvd_9540929.iso'
 
 # WSUS Client
-profile::wsus_services::server_url: 'http://ms-node0.puppet.vm:8530'
+profile::wsus_services::server_url: 'http://ms-node2.puppet.vm:8530'
