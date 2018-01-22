@@ -17,6 +17,9 @@ hierarchy:
       - "secrets/node/%{trusted.certname}.yaml"
       - "secrets/role/%{trusted.extensions.pp_role}.yaml"
       - "secrets/common.yaml"
+    options:
+      pkcs7_private_key: /etc/puppetlabs/puppet/ssl/private_key.pkcs7.pem
+      pkcs7_public_key: /etc/puppetlabs/puppet/ssl/public_key.pkcs7.pem
 
   - name: 'Normal Data'
     data_hash: yaml_data
