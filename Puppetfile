@@ -1,5 +1,5 @@
 
-mod 'brettgeek/enable_noop', :latest
+mod 'beergeek/enable_noop', :latest
 mod 'beergeek/disable_noop', :latest
 mod 'puppet/staging', :latest
 mod 'puppet/windows_firewall', :latest
