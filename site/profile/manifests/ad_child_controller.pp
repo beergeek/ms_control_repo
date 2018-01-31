@@ -43,7 +43,7 @@ class profile::ad_child_controller (
     dsc_name             => "${domain_name}.${parent_domain_name}",
     dsc_dynamicupdate    => 'Secure',
     dsc_replicationscope => 'Forest',
-    dsc_credential       => $domain_credentials,
+    #    dsc_credential       => $domain_credentials,
   }
 
   if $ad_users and !empty($ad_users) {
