@@ -38,6 +38,13 @@ class profile::ad_child_controller (
     dsc_logpath                       => $ad_log_path,
   }
 
+  dsc_xdnsserveradzone { "${domain_name}\\${parent_domain_name}":
+    dsc_ensure           => present,
+    dsc_dynamicupdate    => 'Secure',
+    dsc_replicationscope => 'Forest',
+    dsc_credential       => $domain_credentials,
+  }
+
   if $ad_users and !empty($ad_users) {
     $ad_users.each |String $ad_user,Hash $ad_user_data| {
       dsc_xaduser { $ad_user:
