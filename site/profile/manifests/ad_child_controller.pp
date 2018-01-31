@@ -38,9 +38,9 @@ class profile::ad_child_controller (
     dsc_logpath                       => $ad_log_path,
   }
 
-  dsc_xdnsserveradzone { "${domain_name}\\${parent_domain_name}":
+  dsc_xdnsserveradzone { "${domain_name}.${parent_domain_name}":
     dsc_ensure           => present,
-    dsc_name             => "${domain_name}\\${parent_domain_name}",
+    dsc_name             => "${domain_name}.${parent_domain_name}",
     dsc_dynamicupdate    => 'Secure',
     dsc_replicationscope => 'Forest',
     dsc_credential       => $domain_credentials,
