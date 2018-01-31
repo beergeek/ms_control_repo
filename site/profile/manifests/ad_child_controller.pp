@@ -40,6 +40,7 @@ class profile::ad_child_controller (
 
   dsc_xdnsserveradzone { "${domain_name}\\${parent_domain_name}":
     dsc_ensure           => present,
+    dsc_name             => "${domain_name}\\${parent_domain_name}",
     dsc_dynamicupdate    => 'Secure',
     dsc_replicationscope => 'Forest',
     dsc_credential       => $domain_credentials,
