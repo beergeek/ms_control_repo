@@ -5,7 +5,7 @@ mod 'puppet/staging', :latest
 mod 'puppet/windows_firewall', :latest
 mod 'puppetlabs/chocolatey', :latest
 mod 'puppetlabs/dsc', :latest
-mof 'puppetlabs/exec', :latest
+mod 'puppetlabs/exec', :latest
 mod 'puppetlabs/firewall', :latest
 mod 'puppetlabs/mount_iso', :latest
 mod 'puppetlabs/powershell', :latest
