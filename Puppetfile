@@ -7,6 +7,7 @@ mod 'puppetlabs/chocolatey', :latest
 mod 'puppetlabs/dsc', :latest
 mod 'puppetlabs/exec', :latest
 mod 'puppetlabs/firewall', :latest
+mod 'puppetlabs/inifile', :latest
 mod 'puppetlabs/mount_iso', :latest
 mod 'puppetlabs/powershell', :latest
 mod 'puppetlabs/reboot', :latest
