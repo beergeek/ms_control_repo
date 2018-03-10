@@ -10,6 +10,7 @@ mod 'puppetlabs/firewall', :latest
 mod 'puppetlabs/inifile', :latest
 mod 'puppetlabs/mount_iso', :latest
 mod 'puppetlabs/powershell', :latest
+mod 'puppetlabs/puppet_agent', :latest
 mod 'puppetlabs/reboot', :latest
 mod 'puppetlabs/registry', :latest
 mod 'puppetlabs/resource', :latest
