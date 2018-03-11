@@ -2,6 +2,7 @@
 mod 'beergeek/enable_noop', :latest
 mod 'beergeek/facecount', :latest
 mod 'beergeek/disable_noop', :latest
+#mod 'beergeek/iis', :latest
 mod 'puppet/staging', :latest
 mod 'puppet/windows_firewall', :latest
 mod 'puppetlabs/chocolatey', :latest
@@ -19,3 +20,7 @@ mod 'puppetlabs/sqlserver', :latest
 mod 'puppetlabs/stdlib', :latest
 mod 'puppetlabs/wsus_client', :latest
 mod 'saz/resolv_conf', :latest
+
+mod 'iis',
+  :git => 'https://github.com/beergeek/iis.git',
+  :branch => 'master'
