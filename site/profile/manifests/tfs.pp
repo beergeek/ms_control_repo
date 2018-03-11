@@ -1,6 +1,6 @@
 class profile::tfs (
-  Hash[String] $web_sites,
-  Hash[String] $website_defaults,
+  Hash $web_sites,
+  Hash $website_defaults,
 ) {
 
   require profile::database_services::sqlserver
@@ -12,7 +12,6 @@ class profile::tfs (
         * => $website_defaults,;
     }
   }
-
 
   staging::file { 'tfs':
     source => 'https://download.microsoft.com/download/d/b/0/db0b6e5f-4cb3-4d09-8023-bc4ee8f5d0c3/tfsserver2017.2.exe',
