@@ -6,6 +6,7 @@ mod 'beergeek/disable_noop', :latest
 mod 'puppet/staging', :latest
 mod 'puppet/windows_firewall', :latest
 mod 'puppetlabs/chocolatey', :latest
+mod 'puppetlabs/acl', :latest
 mod 'puppetlabs/dsc', :latest
 mod 'puppetlabs/exec', :latest
 mod 'puppetlabs/firewall', :latest
