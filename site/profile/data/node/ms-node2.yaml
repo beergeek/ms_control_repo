@@ -1,0 +1,81 @@
+---
+
+profile::tfs::web_sites:
+  'Team Foundation Server':
+    ensure: 'present'
+    state: 'started'
+    website_path: 'C:\\Program Files\\Microsoft Team Foundation Server 15.0\\Tools\\Templates'
+    directory_owner: 'S-1-5-18'
+    binding:
+      port: '8080'
+      protocol: 'HTTP'
+      hostname: 'Team Foundation Server'
+    website_directory_acl:
+      'C:\Program Files\Microsoft Team Foundation Server 15.0\Application Tier\Web Services':
+        group: 'S-1-5-18',
+        inherit_parent_permissions: true,
+        owner: 'S-1-5-18',
+        permissions:
+          - 'identity': 'NT SERVICE\TrustedInstaller'
+            'rights':
+              - 'full'
+            'affects': 'self_only'
+            'is_inherited' true
+          - 'identity': 'NT SERVICE\TrustedInstaller'
+            'rights':
+              - 'full'
+            'child_types': 'containers'
+            'affects': 'children_only'
+            'is_inherited' true
+          - 'identity': 'NT AUTHORITY\SYSTEM'
+            'rights':
+              - 'full'
+            'affects': 'self_only'
+            'is_inherited': true
+          - 'identity': 'NT AUTHORITY\SYSTEM'
+            'rights':
+              - 'full'
+            'affects': 'children_only'
+            'is_inherited':  true
+          - 'identity': 'BUILTIN\Administrators'
+            'rights':
+              - 'full'
+            'affects': 'self_only'
+            'is_inherited': true
+          - 'identity': 'BUILTIN\Administrators'
+            'rights':
+              - 'full'
+            'affects': 'children_only'
+            'is_inherited':  true
+          - 'identity': 'BUILTIN\Users'
+            'rights':
+              - 'read'
+              - 'execute'
+            'affects': 'self_only'
+            'is_inherited': true
+          - 'identity': 'BUILTIN\Users'
+            'rights':
+              - 'read'
+              - 'execute'
+            'affects': 'children_only'
+            'is_inherited':  true
+          - 'identity': 'CREATOR OWNER'
+            'rights':
+              - 'full'
+            'affects': 'children_only'
+            'is_inherited':  true
+          - 'identity': 'APPLICATION PACKAGE AUTHORITY\ALL APPLICATION PACKAGES'
+            'rights':
+              - 'read'
+              - 'execute'
+            'affects': 'self_only'
+            'is_inherited': true
+          - 'identity': 'APPLICATION PACKAGE AUTHORITY\ALL APPLICATION PACKAGES'
+            'rights':
+              - 'read'
+              - 'execute'
+            'affects': 'children_only'
+            'is_inherited':  true
+profile::tfs::website_defaults:
+  ensure: 'present'
+  state: 'started'
