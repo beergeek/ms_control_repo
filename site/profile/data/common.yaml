@@ -20,6 +20,8 @@ profile::mom::firewall_rules:
     dport: '8142'
   '010 PE Orchestrator 8143':
     dport: '8143'
+  '010 PE PostgreSQL 5432':
+    dport: '5432'
 profile::mom::firewall_rule_defaults:
   proto: 'tcp'
   action: 'accept'
