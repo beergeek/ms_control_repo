@@ -25,3 +25,6 @@ mod 'saz/resolv_conf', :latest
 mod 'iis',
   :git => 'https://github.com/beergeek/iis.git',
   :branch => 'master'
+mod 'beergeek/active_directory',
+  :git => 'https://github.com/beergeek/active_directory.git',
+  :branch => 'master'
