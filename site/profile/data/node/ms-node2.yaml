@@ -9,7 +9,7 @@ profile::tfs::web_sites:
     binding_hash:
       - port: '8080'
         protocol: 'HTTP'
-        hostname: 'Team Foundation Server'
+        hostname: 'ms-node2'
     website_directory_acl:
       group: 'S-1-5-18'
       inherit_parent_permissions: true
